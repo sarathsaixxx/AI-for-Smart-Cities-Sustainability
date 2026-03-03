@@ -77,10 +77,52 @@ pip install -r requirements.txt
 * **Windows:** `C:\Users\<your-username>\.kaggle\`
 * **Mac/Linux:** `~/.kaggle/`
 
+Your `kaggle.json`  should be in the form: 
+```bash
+{
+  "username": "your_kaggle_username",
+  "key": "your_api_key"
+}
+```
+
 (Mac/Linux only)
 
 ```bash
 chmod 600 ~/.kaggle/kaggle.json
+```
+
+And Update the code:
+From this: (Using Kaggle API Configuration) 
+```bash
+!pip install -q kaggle
+
+import json
+import os
+
+kaggle_json = {
+    "username": "sarathsai...", #provide username here (change the username also)
+    "key": "KGAT_4c1117..." #provide api token from https://www.kaggle.com/settings , scroll down to api section, give some random name, copy paste url of the oken
+}
+
+os.makedirs("/root/.kaggle", exist_ok=True)#using this, we make sure folder exists
+with open("/root/.kaggle/kaggle.json", "w") as f:# save kaggle.json
+    json.dump(kaggle_json, f)
+
+!chmod 600 /root/.kaggle/kaggle.json
+
+!kaggle datasets download -d rishabhsnip/earth-observation-delhi-airshed #download the dataset
+!unzip -o earth-observation-delhi-airshed.zip -d ./dataset #unzip here
+```
+To This: (Updated Version)
+```bash
+pip install kaggle # no ! here(just like we use ! in colab
+import os
+import zipfile
+
+os.makedirs("dataset", exist_ok=True) # create dataset folder
+os.system("kaggle datasets download -d rishabhsnip/earth-observation-delhi-airshed")# download the  dataset from kaggle directly
+with zipfile.ZipFile("earth-observation-delhi-airshed.zip", 'r') as zip_ref:
+    zip_ref.extractall("dataset") #extract dataset
 ```
 
 ## 5. Open the Notebook
