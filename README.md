@@ -32,3 +32,62 @@ And refer this readme Documentation:  [README.pdf](https://github.com/sarathsaix
 ### OR
 
 Refer to this drive link (if the above link crashes):  [README.pdf](https://drive.google.com/file/d/1OfBO1ERXs-fNfbAqFkUEK0qB-ZcoA-hI/view?usp=sharing)
+
+# How to Run the Project
+
+## 1. Clone the Repository
+
+```bash
+git clone <your-repo-link>
+cd <your-repo-folder>
+```
+
+## 2. Create Virtual Environment (Recommended)
+
+```bash
+python -m venv venv
+```
+
+Activate it:
+
+**Windows**
+
+```bash
+venv\Scripts\activate
+```
+
+**Mac/Linux**
+
+```bash
+source venv/bin/activate
+```
+
+## 3. Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+## 4. Setup Kaggle API
+
+1. Go to Kaggle → Account → Create New API Token
+2. Download `kaggle.json`
+3. Place it in:
+
+* **Windows:** `C:\Users\<your-username>\.kaggle\`
+* **Mac/Linux:** `~/.kaggle/`
+
+(Mac/Linux only)
+
+```bash
+chmod 600 ~/.kaggle/kaggle.json
+```
+
+## 5. Open the Notebook
+
+Open the `.ipynb` file in VS Code (or Jupyter Notebook) and run all cells.
+
+---
+
+The dataset will download automatically, and the models (TinyCNN and ResNet18) will train and evaluate.
+
