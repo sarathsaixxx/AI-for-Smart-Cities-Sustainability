@@ -33,7 +33,7 @@ And refer this readme Documentation:  [README.pdf](https://github.com/sarathsaix
 
 Refer to this drive link (if the above link crashes):  [README.pdf](https://drive.google.com/file/d/1OfBO1ERXs-fNfbAqFkUEK0qB-ZcoA-hI/view?usp=sharing)
 
-# How to Run the Project
+# How to Run the Project (If You Want to Run It Using Open-Source Tools Like VS Code, etc.)
 
 ## 1. Clone the Repository
 
